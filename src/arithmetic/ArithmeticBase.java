@@ -7,33 +7,32 @@ package arithmetic;
 
 import java.util.Scanner;
 
-/** This class takes String input plus,minus,divide and times
- * from user and execute the operation
+/**
+ * This class takes String input plus,minus,divide and times from user and
+ * execute the operation
  *
- * @author sivagamasrinivasan
- * date 06/20
+ * @author sivagamasrinivasan date 06/20
  */
-public class ArithmeticBase 
-{
- public double x,y;
-    double calculate(double x, double y) 
-        {
-        Scanner sc =new Scanner(System.in);
-        System.out.println("enter String");
-        String s= sc.next();
-        switch (s.toUpperCase()) 
-        {
-            case "PLUS":
-                return x + y;
-            case "MINUS":
-                return x - y;
-            case "TIMES":
-                return x * y;
-            case "DIVIDE":
-                return x / y;
-            default:
-                throw new AssertionError("Unknown operations " + this);
+public class ArithmeticBase {
+    
+    private double x, y;
+
+    public double calculate(double x, double y) {
+        
+        System.out.println("Here is the output for all operations involving " 
+                + x + " and " + y);
+        
+        for (int i = 0; i < Operators.values().length; i++) {
+            if (i == 0) {
+                System.out.println("Addition: " + (x + y));
+            } else if (i == 1) {
+                System.out.println("Subtraction: " + (x - y)); 
+            } else if (i == 2) {
+                System.out.println("Multiplication: " + (x * y)); 
+            } else if (i == 3) {
+                System.out.println("Division: " + (x / y)); 
+            }
         }
+        return 0;
     }
-   
 }
